@@ -12,9 +12,17 @@ load_dotenv()
 IS_RPI = os.path.exists("/proc/device-tree/model")  # 只有真实 RPi 才有
 DEV_MODE = not IS_RPI  # Mac 上开发模式，跳过 GPIO
 
+# ── 运行模式 ─────────────────────────────────────────────
+# "ollama"  : 本地 Ollama（Mac 开发 / RPi5）
+# "rkllama" : Orange Pi 5 NPU（rkllama server）
+# "cloud"   : xAI Grok（无本地 GPU 降级）
+RUNTIME_MODE = os.getenv("RUNTIME_MODE", "ollama")
+
 # ── Ollama / AI ──────────────────────────────────────────
 OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gemma4:e2b")
+RKLLAMA_BASE_URL = os.getenv("RKLLAMA_BASE_URL", "http://localhost:8080")
+XAI_API_KEY = os.getenv("XAI_API_KEY", "")
 
 PIXEL_SYSTEM_PROMPT = """你是 Pixel，一个挂脖式 AI 智能伙伴。
 性格友好、有温度，说话简洁自然。
