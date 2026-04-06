@@ -1,0 +1,28 @@
+
+# Audio capture & playback
+sounddevice==0.5.1
+soundfile==0.12.1
+numpy==2.2.4
+
+# STT — local fast-whisper (CPU-optimised for ARM)
+faster-whisper==1.1.1
+
+# TTS — edge-tts (Microsoft neural voices, free, async)
+edge-tts==7.0.2
+
+# AI — Ollama client (Gemma 4 E2B local)
+ollama==0.4.7
+
+# Cloud sync (Supabase — memories, conversations)
+supabase==2.15.1
+
+# HTTP / async
+httpx==0.28.1
+aiofiles==24.1.0
+
+# Config
+python-dotenv==1.1.0
+
+# GPIO (Raspberry Pi / Orange Pi — install only on device)
+# RPi.GPIO==0.7.1  # uncomment on RPi5
+# lgpio==0.2.2.0   # alternative
